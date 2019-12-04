@@ -1,5 +1,15 @@
 version: 0.2
 phases:
+  install: 
+    runtime-versions:
+      php: 7.2
   build:
     commands:
+    - echo Build started on `date`
+    - echo installing composer..
+    - composer install
+    - echo creating .env file..
+    - cp .env.example .env
+    - echo generating app key
+    - php artisan key:generate
     - bash scripts/install_composer_dependencies.sh
