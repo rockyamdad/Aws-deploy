@@ -13,3 +13,7 @@ phases:
     - echo generating app key
     - php artisan key:generate
     - bash scripts/install_composer_dependencies.sh
+    
+  artifacts:
+  files:
+    - build-output/**/*  
